@@ -75,7 +75,13 @@ class StringHashTable{
 			return false;
 		}
 		else {
-			return true;
+			String[] bucketContents = this.bucketArr[hashString(inputString)];
+			for (int counter = 0; counter < bucketContents.length; counter++){
+				if (inputString.equals(bucketContents[counter])){
+					return true;
+				}
+			}
+			return false;
 		}
 	}
 	
